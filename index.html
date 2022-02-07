@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          // ...
+        },
+        plugins: [
+          require('@tailwindcss/typography'),
+          // ...
+        ],
+      }
+    </script>
+    <title>Bank</title>
+  </head>
+  <body class="bg-slate-900 font-sans">
+    <nav class="flex justify-start px-6 py-6 lg:px-6 lg:py-6 shadow-md">
+      <ul
+        class="nav flex justify-center font-sans font-medium text-sm lg:text-lg text-zinc-100"
+      >
+        <li class="nav-item flex items-center lg:px-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#d946ef"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <a class="select-none">global<span class="text-fuchsia-500">.</span>pix</a>
+        </li>
+        <li class="nav-item px-4">
+          <a href="">Home</a>
+        </li>
+        <li class="nav-item px-4">
+          <a href="">Cryptocurrency</a>
+        </li>
+        <li class="nav-item px-4">
+          <a href="">Investiments</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="pb-1">
+      <container
+        class="flex flex-col items-center justify-center font-medium text-3xl py-12 pb-0 text-zinc-100"
+      >
+        <h1>Bem-vindo, Cláudio!</h1>
+        <h2></h2>
+        <div class="flex flex-col items-center justify-center mt-8 w-full">
+          <card
+            class="ring-2 ring-offset-2 ring-offset-slate-900 ring-fuchsia-500 drop-shadow-md text-zinc-100 rounded-xl my-5 px-14 py-8 w-full lg:w-1/4 mb-32"
+          >
+            <div class="flex items-center h-auto mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <h3 class="text-xl">Saldo</h3>
+            </div>
+            <div class="items-center flex justify-between">
+              <h3 class="text-4xl" id="balance">R$ 0</h3>
+              <div class="flex text-4xl">
+                <span class="mr-2">16%</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class=" h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
+                </svg>
+              </div>
+
+            </div>
+          </card>
+          <section id="transaction">
+            <div class="w-3/6">
+              <h3 class="text-2xl p-5 text-left mt-12">Transações</h3>
+            </div>
+            
+            <table id="data-table">
+              <thead>
+                <tr>
+                  <th>
+                    <div class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mr-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                          clip-rule="evenodd"
+                        /></svg
+                      >Descrição
+                    </div>
+                  </th>
+                  <th>
+                    <div class="flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 mr-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                        /></svg
+                      >Valor
+                    </div>
+                  </th>
+                  <th>
+                    <div class="flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mr-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        /></svg
+                      >Data
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Website</td>
+                  <td class="text-green-500">+ R$ 5.000,00</td>
+                  <td>06/02/2022</td>
+                </tr>
+                <tr>
+                  <td>Computador</td>
+                  <td class="text-red-500">- R$ 200,00</td>
+                  <td>04/02/2022</td>
+                </tr>
+                <tr>
+                  <td>Hamburger</td>
+                  <td class="text-red-500">- R$ 59,90</td>
+                  <td>02/02/2022</td>
+                </tr>
+                <tr>
+                  <td>Jogo</td>
+                  <td class="text-red-500">- R$ 59,90</td>
+                  <td>02/02/2022</td>
+                </tr>
+                <tr>
+                  <td>License</td>
+                  <td class="text-red-500">- R$ 59,90</td>
+                  <td>02/02/2022</td>
+                </tr>
+                <tr>
+                  <td>Website</td>
+                  <td class="text-green-500">+ R$ 3000,90</td>
+                  <td>02/02/2022</td>
+                </tr>
+                <tr>
+                  <td>Hamburger</td>
+                  <td class="text-red-500">- R$ 59,90</td>
+                  <td>02/02/2022</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </container>
+    </main>
+    <footer>
+      <p class="font-medium m-6 text-gray-400 text-center text-lg">
+        dev.finance
+      </p>
+    </footer>
+  </body>
+</html>
